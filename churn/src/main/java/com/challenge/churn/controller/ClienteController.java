@@ -1,6 +1,8 @@
 package com.challenge.churn.controller;
 
 import com.challenge.churn.model.Cliente;
+import com.challenge.churn.model.Empresa;
+import com.challenge.churn.repo.EmpresaRepo;
 import com.challenge.churn.repo.ClienteRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,7 @@ public class ClienteController {
 
     @Autowired
     private ClienteRepo clienteRepo;
+    private EmpresaRepo empresaRepo;
 
     @GetMapping(value = "/clientes")
     public String listClientes(Model model) {
@@ -31,13 +34,14 @@ public class ClienteController {
             model.addAttribute("cliente", cliente);
             return "cliente-detail";
         } else {
-            return "404"; // Certifique-se de ter um template 404.html
+            return "404";
         }
     }
 
     @GetMapping(value = "/cliente/create")
     public String createClienteForm(Model model) {
         model.addAttribute("cliente", new Cliente());
+        List<Empresa> empresas = empresaRepo.findAll();
         return "cliente-form";
     }
 
@@ -54,7 +58,7 @@ public class ClienteController {
             model.addAttribute("cliente", cliente);
             return "cliente-form";
         } else {
-            return "404"; // Certifique-se de ter um template 404.html
+            return "404";
         }
     }
 
@@ -68,7 +72,7 @@ public class ClienteController {
             clienteRepo.save(existingCliente);
             return "redirect:/clientes";
         } else {
-            return "404"; // Certifique-se de ter um template 404.html
+            return "404";
         }
     }
 

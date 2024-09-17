@@ -40,8 +40,7 @@
         </div>
         <div class="form-group">
             <label for="empresa">Empresa:</label>
-            <select id="empresa" class="form-control" th:field="*{empresa.id}">
-                <!-- Preencher com empresas existentes -->
+            <select id="empresa" th:field="*{empresa.id}" class="form-control">
                 <option th:each="empresa : ${empresas}" th:value="${empresa.id}" th:text="${empresa.nome}"></option>
             </select>
         </div>

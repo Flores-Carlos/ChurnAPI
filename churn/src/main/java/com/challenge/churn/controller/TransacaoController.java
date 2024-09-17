@@ -31,7 +31,7 @@ public class TransacaoController {
             model.addAttribute("transacao", transacao);
             return "transacao-detail";
         } else {
-            return "404"; // Certifique-se de ter um template 404.html
+            return "404";
         }
     }
 
@@ -54,7 +54,7 @@ public class TransacaoController {
             model.addAttribute("transacao", transacao);
             return "transacao-form";
         } else {
-            return "404"; // Certifique-se de ter um template 404.html
+            return "404";
         }
     }
 
@@ -68,7 +68,7 @@ public class TransacaoController {
             transacaoRepo.save(existingTransacao);
             return "redirect:/transacoes";
         } else {
-            return "404"; // Certifique-se de ter um template 404.html
+            return "404";
         }
     }
 

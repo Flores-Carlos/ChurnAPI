@@ -20,7 +20,7 @@ public class ChurnPredictionController {
     private ChurnPredictionRepo churnPredictionRepo;
 
     @Autowired
-    private ClienteRepo clienteRepo; // Adiciona o repositório de Cliente
+    private ClienteRepo clienteRepo;
 
     @GetMapping(value = "/churn-predictions")
     public String listChurnPredictions(Model model) {
@@ -36,7 +36,7 @@ public class ChurnPredictionController {
             model.addAttribute("churnPrediction", churnPrediction);
             return "churn-prediction-detail";
         } else {
-            return "404"; // Certifique-se de ter um template 404.html
+            return "404";
         }
     }
 
@@ -63,7 +63,7 @@ public class ChurnPredictionController {
             model.addAttribute("clientes", clientes);
             return "churn-prediction-form";
         } else {
-            return "404"; // Certifique-se de ter um template 404.html
+            return "404";
         }
     }
 
@@ -77,7 +77,7 @@ public class ChurnPredictionController {
             churnPredictionRepo.save(existingChurnPrediction);
             return "redirect:/churn-predictions";
         } else {
-            return "404"; // Certifique-se de ter um template 404.html
+            return "404";
         }
     }
 
