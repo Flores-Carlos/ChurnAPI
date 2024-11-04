@@ -42,7 +42,6 @@
         <div class="form-group">
             <label for="cliente">Cliente:</label>
             <select id="cliente" th:field="*{cliente.id}" class="form-control">
-                <!-- Preencher com clientes existentes -->
                 <option th:each="cliente : ${clientes}"
                         th:value="${cliente.id}"
                         th:text="${cliente.nome}"></option>
