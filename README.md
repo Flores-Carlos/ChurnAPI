@@ -40,6 +40,18 @@ Nesta sprint, focamos em aprimorar o sistema com as seguintes implementações:
    - Implementamos o caminho para integração com um modelo de IA externo para predição de churn.
    - Embora o modelo final de predição de churn não esteja implementado, configuramos o `AIService` para enviar dados a um endpoint de IA externo (`/api/ai/predict`). Essa estrutura facilita futuras integrações com um modelo de IA já treinado.
 
+### Viabilidade da Solução
+
+A solução entregue com a **ChurnAPI** atende bem às necessidades da **Plusoft**, que, assim como qualquer empresa, busca reduzir a evasão de clientes (churn) utilizando uma abordagem baseada em dados e inteligência artificial. Com as funcionalidades implementadas, a aplicação oferece uma base sólida para:
+
+1. **Análise e Previsão de Churn**: A estrutura da API já está preparada para integrar um modelo de IA, o que permitirá prever quais clientes têm maior probabilidade de churn. Isso ajudará a Plusoft a tomar decisões mais rápidas e direcionadas para reter clientes, criando estratégias personalizadas.
+
+2. **Gerenciamento de Dados de Clientes e Transações**: Com a organização dos dados de clientes, empresas e transações, a solução facilita a análise completa do comportamento dos clientes ao longo do tempo. Essa visão ampla dos dados é fundamental para identificar padrões que podem indicar riscos de churn.
+
+3. **Automatização e Escalabilidade**: A implementação de mensageria com RabbitMQ e monitoramento com Spring Boot Actuator torna o sistema mais robusto e escalável, permitindo uma gestão eficiente das operações e um acompanhamento em tempo real da saúde do sistema.
+
+A solução entregue não só atende os requisitos atuais da Plusoft, mas também permite futuras expansões e melhorias. A integração com IA e a estrutura modular garantem que a API possa evoluir junto com as necessidades do cliente.
+
 ---
 
 ## Pré-Requisitos
