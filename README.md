@@ -74,7 +74,7 @@ Nesta sprint, focamos em aprimorar o sistema com as seguintes implementações:
 
 A integração direta com um modelo de IA para predição ainda não foi finalizada. No entanto, o sistema está configurado para se comunicar com um endpoint de IA. Isso significa que, quando o modelo de IA estiver disponível, basta conectá-lo ao serviço para que o sistema passe a gerar predições de churn automaticamente.
 
-### Observações sobre o Banco de Dados e Limitações
+## Observações sobre o Banco de Dados e Limitações
 
 Durante os testes, encontramos um problema com o **banco de dados Oracle**: ele tem um **limite de sessões simultâneas**. Quando esse limite estoura, acontece um erro de conexão que acabou impactando nos nossos testes.
 
