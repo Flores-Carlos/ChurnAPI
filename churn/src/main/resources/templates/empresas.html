@@ -2,42 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<!--    <link rel="stylesheet" href="/css/global.css">-->
-    <title>Empresas</title>
+    <title th:text="#{empresas.title}">Empresas</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Churn API</a>
+    <a class="navbar-brand" th:href="/" th:text="#{empresas.nav.home}">Churn API</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/empresas">Empresas</a>
+                <a class="nav-link" th:href="/empresas" th:text="#{empresas.nav.empresas}">Empresas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/clientes">Clientes</a>
+                <a class="nav-link" th:href="/clientes" th:text="#{empresas.nav.clientes}">Clientes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/transacoes">Transações</a>
+                <a class="nav-link" th:href="/transacoes" th:text="#{empresas.nav.transacoes}">Transações</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/churn_predictions">Churn Predictions</a>
+                <a class="nav-link" th:href="/churn_predictions" th:text="#{empresas.nav.churnPredictions}">Churn Predictions</a>
             </li>
         </ul>
     </div>
 </nav>
 <div class="container mt-5">
-    <h1>Empresas</h1>
-    <a href="/empresa/create" class="btn btn-primary mb-3">Adicionar Nova Empresa</a>
+    <h1 th:text="#{empresas.heading}">Empresas</h1>
+    <a th:href="/empresa/create" class="btn btn-primary mb-3" th:text="#{empresas.button.add}">Adicionar Nova Empresa</a>
     <table class="table table-bordered">
         <thead class="thead-light">
         <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Endereço</th>
-            <th>Ações</th>
+            <th th:text="#{empresas.table.id}">ID</th>
+            <th th:text="#{empresas.table.nome}">Nome</th>
+            <th th:text="#{empresas.table.endereco}">Endereço</th>
+            <th th:text="#{empresas.table.acoes}">Ações</th>
         </tr>
         </thead>
         <tbody>
@@ -46,9 +45,9 @@
             <td th:text="${empresa.nome}"></td>
             <td th:text="${empresa.endereco}"></td>
             <td>
-                <a class="btn btn-info btn-sm" th:href="@{/empresa/{id}(id=${empresa.id})}">Ver</a>
-                <a class="btn btn-warning btn-sm" th:href="@{/empresa/update/{id}(id=${empresa.id})}">Editar</a>
-                <a class="btn btn-danger btn-sm" th:href="@{/empresa/delete/{id}(id=${empresa.id})}" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
+                <a class="btn btn-info btn-sm" th:href="@{/empresa/{id}(id=${empresa.id})}" th:text="#{empresas.action.view}">Ver</a>
+                <a class="btn btn-warning btn-sm" th:href="@{/empresa/update/{id}(id=${empresa.id})}" th:text="#{empresas.action.edit}">Editar</a>
+                <a class="btn btn-danger btn-sm" th:href="@{/empresa/delete/{id}(id=${empresa.id})}" th:onclick="return confirm('#{empresas.confirm.delete}');" th:text="#{empresas.action.delete}">Excluir</a>
             </td>
         </tr>
         </tbody>

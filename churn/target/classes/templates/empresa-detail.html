@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- <link rel="stylesheet" href="/css/global.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Detalhes da Empresa</title>
+    <title th:text="#{empresa.detail.title}">Detalhes da Empresa</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Churn API</a>
+    <a class="navbar-brand" th:href="/" th:text="#{empresa.detail.nav.home}">Churn API</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/empresas">Empresas</a>
+                <a class="nav-link" th:href="/empresas" th:text="#{empresa.detail.nav.empresas}">Empresas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/clientes">Clientes</a>
+                <a class="nav-link" th:href="/clientes" th:text="#{empresa.detail.nav.clientes}">Clientes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/transacoes">Transações</a>
+                <a class="nav-link" th:href="/transacoes" th:text="#{empresa.detail.nav.transacoes}">Transações</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/churn_predictions">Churn Predictions</a>
+                <a class="nav-link" th:href="/churn_predictions" th:text="#{empresa.detail.nav.churnPredictions}">Churn Predictions</a>
             </li>
         </ul>
     </div>
 </nav>
 <div class="container mt-5">
-    <h1>Detalhes da Empresa</h1>
+    <h1 th:text="#{empresa.detail.heading}">Detalhes da Empresa</h1>
     <div class="card">
         <div class="card-body">
-            <p><strong>ID:</strong> <span th:text="${empresa.id}"></span></p>
-            <p><strong>Nome:</strong> <span th:text="${empresa.nome}"></span></p>
-            <p><strong>Endereço:</strong> <span th:text="${empresa.endereco}"></span></p>
-            <a href="/empresas" class="btn btn-primary">Voltar</a>
+            <p><strong th:text="#{empresa.detail.label.id}">ID:</strong> <span th:text="${empresa.id}"></span></p>
+            <p><strong th:text="#{empresa.detail.label.nome}">Nome:</strong> <span th:text="${empresa.nome}"></span></p>
+            <p><strong th:text="#{empresa.detail.label.endereco}">Endereço:</strong> <span th:text="${empresa.endereco}"></span></p>
+            <a th:href="/empresas" class="btn btn-primary" th:text="#{empresa.detail.button.back}">Voltar</a>
         </div>
     </div>
 </div>

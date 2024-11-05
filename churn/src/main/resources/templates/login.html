@@ -4,44 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Login</title>
+    <title th:text="#{login.title}">Login</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Churn API</a>
+    <a class="navbar-brand" th:href="#" th:text="#{login.nav.home}">Churn API</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/empresas">Empresas</a>
+                <a class="nav-link" th:href="/empresas" th:text="#{login.nav.empresas}">Empresas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/clientes">Clientes</a>
+                <a class="nav-link" th:href="/clientes" th:text="#{login.nav.clientes}">Clientes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/transacoes">Transações</a>
+                <a class="nav-link" th:href="/transacoes" th:text="#{login.nav.transacoes}">Transações</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/churn-predictions">Churn Predictions</a>
+                <a class="nav-link" th:href="/churn-predictions" th:text="#{login.nav.churnPredictions}">Churn Predictions</a>
             </li>
         </ul>
     </div>
 </nav>
 
 <div class="container mt-5">
-    <h1>Login</h1>
+    <h1 th:text="#{login.heading}">Login</h1>
     <form th:action="@{/login}" method="post">
         <div class="form-group">
-            <label for="username">Username:</label>
+            <label for="username" th:text="#{login.label.username}">Username:</label>
             <input type="text" class="form-control" id="username" name="username" required />
         </div>
         <div class="form-group">
-            <label for="password">Password:</label>
+            <label for="password" th:text="#{login.label.password}">Password:</label>
             <input type="password" class="form-control" id="password" name="password" required />
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary" th:text="#{login.button.signin}">Sign in</button>
     </form>
 </div>
 

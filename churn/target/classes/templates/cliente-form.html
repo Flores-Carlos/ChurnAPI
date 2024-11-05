@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Formulário de Cliente</title>
+    <title th:text="#{cliente.form.title}">Formulário de Cliente</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Churn API</a>
+    <a class="navbar-brand" th:href="/" th:text="#{cliente.form.nav.home}">Churn API</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/empresas">Empresas</a>
+                <a class="nav-link" th:href="/empresas" th:text="#{cliente.form.nav.empresas}">Empresas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/clientes">Clientes</a>
+                <a class="nav-link" th:href="/clientes" th:text="#{cliente.form.nav.clientes}">Clientes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/transacoes">Transações</a>
+                <a class="nav-link" th:href="/transacoes" th:text="#{cliente.form.nav.transacoes}">Transações</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/churn_predictions">Churn Predictions</a>
+                <a class="nav-link" th:href="/churn_predictions" th:text="#{cliente.form.nav.churnPredictions}">Churn Predictions</a>
             </li>
         </ul>
     </div>
 </nav>
 <div class="container mt-5">
-    <h1>Formulário de Cliente</h1>
+    <h1 th:text="#{cliente.form.heading}">Formulário de Cliente</h1>
     <form th:action="@{${cliente.id != null ? '/cliente/update/' + cliente.id : '/cliente/create'}}" th:object="${cliente}" method="post">
         <div class="form-group">
-            <label for="nome">Nome:</label>
+            <label for="nome" th:text="#{cliente.form.label.nome}">Nome:</label>
             <input type="text" id="nome" class="form-control" th:field="*{nome}" />
         </div>
         <div class="form-group">
-            <label for="email">Email:</label>
+            <label for="email" th:text="#{cliente.form.label.email}">Email:</label>
             <input type="text" id="email" class="form-control" th:field="*{email}" />
         </div>
         <div class="form-group">
-            <label for="empresa">Empresa:</label>
+            <label for="empresa" th:text="#{cliente.form.label.empresa}">Empresa:</label>
             <select id="empresa" th:field="*{empresa.id}" class="form-control">
                 <option th:each="empresa : ${empresas}" th:value="${empresa.id}" th:text="${empresa.nome}"></option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-primary" th:text="#{cliente.form.button.save}">Salvar</button>
     </form>
-    <a href="/clientes" class="btn btn-secondary mt-3">Voltar para a lista</a>
+    <a th:href="/clientes" class="btn btn-secondary mt-3" th:text="#{cliente.form.button.back}">Voltar para a lista</a>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

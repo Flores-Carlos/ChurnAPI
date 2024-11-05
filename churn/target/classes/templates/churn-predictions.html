@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- <link rel="stylesheet" href="/css/global.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Lista de Previsões de Churn</title>
+    <title th:text="#{churn.predictions.title}">Lista de Previsões de Churn</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Churn API</a>
+    <a class="navbar-brand" th:href="/" th:text="#{churn.predictions.nav.home}">Churn API</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/empresas">Empresas</a>
+                <a class="nav-link" th:href="/empresas" th:text="#{churn.predictions.nav.empresas}">Empresas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/clientes">Clientes</a>
+                <a class="nav-link" th:href="/clientes" th:text="#{churn.predictions.nav.clientes}">Clientes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/transacoes">Transações</a>
+                <a class="nav-link" th:href="/transacoes" th:text="#{churn.predictions.nav.transacoes}">Transações</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/churn_predictions">Churn Predictions</a>
+                <a class="nav-link" th:href="/churn_predictions" th:text="#{churn.predictions.nav.churnPredictions}">Churn Predictions</a>
             </li>
         </ul>
     </div>
 </nav>
 <div class="container mt-5">
-    <h1>Lista de Previsões de Churn</h1>
-    <a href="/churn-prediction/create" class="btn btn-primary mb-3">Adicionar Nova Previsão de Churn</a>
+    <h1 th:text="#{churn.predictions.heading}">Lista de Previsões de Churn</h1>
+    <a th:href="/churn-prediction/create" class="btn btn-primary mb-3" th:text="#{churn.predictions.button.add}">Adicionar Nova Previsão de Churn</a>
     <table class="table table-bordered">
         <thead class="thead-light">
         <tr>
-            <th>ID</th>
-            <th>Probabilidade de Churn</th>
-            <th>Data de Predição</th>
-            <th>Cliente</th>
-            <th>Ações</th>
+            <th th:text="#{churn.predictions.table.id}">ID</th>
+            <th th:text="#{churn.predictions.table.probabilidadeChurn}">Probabilidade de Churn</th>
+            <th th:text="#{churn.predictions.table.dataPredicao}">Data de Predição</th>
+            <th th:text="#{churn.predictions.table.cliente}">Cliente</th>
+            <th th:text="#{churn.predictions.table.acoes}">Ações</th>
         </tr>
         </thead>
         <tbody>
@@ -48,9 +47,9 @@
             <td th:text="${churnPrediction.dataPredicao}"></td>
             <td th:text="${churnPrediction.cliente.nome}"></td>
             <td>
-                <a class="btn btn-info btn-sm" th:href="@{/churn-prediction/{id}(id=${churnPrediction.id})}">Ver</a>
-                <a class="btn btn-warning btn-sm" th:href="@{/churn-prediction/edit/{id}(id=${churnPrediction.id})}">Editar</a>
-                <a class="btn btn-danger btn-sm" th:href="@{/churn-prediction/delete/{id}(id=${churnPrediction.id})}" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
+                <a class="btn btn-info btn-sm" th:href="@{/churn-prediction/{id}(id=${churnPrediction.id})}" th:text="#{churn.predictions.action.view}">Ver</a>
+                <a class="btn btn-warning btn-sm" th:href="@{/churn-prediction/edit/{id}(id=${churnPrediction.id})}" th:text="#{churn.predictions.action.edit}">Editar</a>
+                <a class="btn btn-danger btn-sm" th:href="@{/churn-prediction/delete/{id}(id=${churnPrediction.id})}" th:onclick="return confirm('#{churn.predictions.confirm.delete}');" th:text="#{churn.predictions.action.delete}">Excluir</a>
             </td>
         </tr>
         </tbody>
