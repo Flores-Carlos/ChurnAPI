@@ -91,6 +91,9 @@ A integração direta com um modelo de IA para predição não foi finalizada a 
 Durante os testes encontramos um problema com o **banco de dados Oracle**, ele tem um **limite de sessões simultâneas**. Quando esse limite estoura, acontece um erro de conexão que constantemente prejudicava nossos testes.
 
 Só avisando porque isso pode afetar os testes do professor também, caso várias sessões tentem acessar o banco ao mesmo tempo ou testes sejam realizados com intervalos muito curtos entre eles.
+```bash
+java.sql.SQLException: ORA-02391: exceeded simultaneous SESSIONS_PER_USER limit
+```
 
 ---
 
