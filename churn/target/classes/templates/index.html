@@ -4,28 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<!--    <link rel="stylesheet" href="/css/global.css">-->
-    <title>Home</title>
+    <title th:text="#{home.title}">Home</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Churn API</a>
+    <a class="navbar-brand" th:href="#" th:text="#{home.nav.home}">Churn API</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/empresas">Empresas</a>
+                <a class="nav-link" th:href="/empresas" th:text="#{home.nav.empresas}">Empresas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/clientes">Clientes</a>
+                <a class="nav-link" th:href="/clientes" th:text="#{home.nav.clientes}">Clientes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/transacoes">Transações</a>
+                <a class="nav-link" th:href="/transacoes" th:text="#{home.nav.transacoes}">Transações</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/churn-predictions">Churn Predictions</a>
+                <a class="nav-link" th:href="/churn-predictions" th:text="#{home.nav.churnPredictions}">Churn Predictions</a>
             </li>
         </ul>
     </div>
@@ -33,14 +32,14 @@
 
 <div class="container mt-5">
     <div class="jumbotron">
-        <h1 class="display-4">Bem-vindo ao Churn API!</h1>
-        <p class="lead">Aqui tu pode gerenciar empresas, transações, clientes e predições de churn.</p>
+        <h1 class="display-4" th:text="#{home.welcome}">Bem-vindo ao Churn API!</h1>
+        <p class="lead" th:text="#{home.lead}">Aqui você pode gerenciar empresas, transações, clientes e predições de churn.</p>
         <hr class="my-4">
-        <p>Use a barra de navegação acima para acessar diferentes seções da aplicação.</p>
-        <a class="btn btn-primary btn-lg" href="/empresas" role="button">Gerenciar Empresas</a>
-        <a class="btn btn-secondary btn-lg" href="/clientes" role="button">Gerenciar Clientes</a>
-        <a class="btn btn-secondary btn-lg" href="/transacoes" role="button">Gerenciar Transações</a>
-        <a class="btn btn-secondary btn-lg" href="/churn-predictions" role="button">Gerenciar Predições de Churn</a>
+        <p th:text="#{home.instruction}">Use a barra de navegação acima para acessar diferentes seções da aplicação.</p>
+        <a class="btn btn-primary btn-lg" th:href="/empresas" th:text="#{home.button.empresas}" role="button">Gerenciar Empresas</a>
+        <a class="btn btn-secondary btn-lg" th:href="/clientes" th:text="#{home.button.clientes}" role="button">Gerenciar Clientes</a>
+        <a class="btn btn-secondary btn-lg" th:href="/transacoes" th:text="#{home.button.transacoes}" role="button">Gerenciar Transações</a>
+        <a class="btn btn-secondary btn-lg" th:href="/churn-predictions" th:text="#{home.button.churnPredictions}" role="button">Gerenciar Predições de Churn</a>
     </div>
 </div>
 

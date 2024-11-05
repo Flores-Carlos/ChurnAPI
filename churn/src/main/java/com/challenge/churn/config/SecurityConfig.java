@@ -29,7 +29,7 @@ public class SecurityConfig {
                 .logout(logout -> logout
                         .permitAll()
                 )
-                .csrf(AbstractHttpConfigurer::disable);  // Para simplificação, desativa o CSRF
+                .csrf(AbstractHttpConfigurer::disable);
 
         return http.build();
     }
